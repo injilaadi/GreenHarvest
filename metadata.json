@@ -1,0 +1,6 @@
+{
+  "name": "GreenHarvest",
+  "description": "GreenHarvest supply finder and exact alert network. Search supply nodes or broadcast emergency needs instantly.",
+  "requestFramePermissions": ["camera", "geolocation"],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

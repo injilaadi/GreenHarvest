@@ -1,0 +1,142 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Outfit", ui-sans-serif, system-ui, sans-serif;
+  --font-serif: "Playfair Display", ui-serif, system-ui, serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
+
+  --color-natural-bg: #FDFCF8;
+  --color-natural-text: #3D4035;
+  --color-natural-primary: #8FA98F;
+  --color-natural-primary-dark: #5B705B;
+  --color-natural-secondary: #D4A373;
+  --color-natural-accent: #FEFAE0;
+  --color-natural-border: #E8E4D9;
+  --color-natural-light: #F1F0E8;
+  --color-natural-charcoal: #2A2D24;
+}
+
+/* Custom styles for Leaflet elements inside our light, natural layout */
+.leaflet-container {
+  background: #EBE9E1 !important;
+  font-family: 'Outfit', sans-serif !important;
+}
+
+.leaflet-bar-custom-group button {
+  background: #ffffff;
+  border: 1px solid #E8E4D9;
+  color: #5B705B;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.leaflet-bar-custom-group button:hover {
+  background: #F1F0E8;
+  color: #2A2D24;
+  border-color: #8FA98F;
+  box-shadow: 0 2px 6px rgba(143, 169, 143, 0.4);
+}
+
+/* Marker pulse animations matching natural tones */
+.marker-pulse-wrapper {
+  position: relative;
+  width: 20px;
+  height: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.marker-blue-core {
+  width: 12.5px;
+  height: 12.5px;
+  background-color: #3b82f6; /* Beautiful Blue dot as requested */
+  border-radius: 50%;
+  border: 2px solid #ffffff;
+  z-index: 3;
+  box-shadow: 0 0 8px rgba(59, 130, 246, 0.6);
+}
+
+.marker-pulse-ring {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  border: 2px solid #3b82f6;
+  opacity: 0;
+  animation: pulse-ring 2s cubic-bezier(0.215, 0.61, 0.355, 1) infinite;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.marker-pulse-ring-2 {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  border: 1px solid #3b82f6;
+  opacity: 0;
+  animation: pulse-ring 2s cubic-bezier(0.215, 0.61, 0.355, 1) infinite;
+  animation-delay: 1s;
+  pointer-events: none;
+  z-index: 2;
+}
+
+@keyframes pulse-ring {
+  0% {
+    transform: scale(0.4);
+    opacity: 0.8;
+  }
+  80%, 100% {
+    transform: scale(2.5);
+    opacity: 0;
+  }
+}
+
+/* Custom popup styling matching natural theme */
+.leaflet-popup-content-wrapper {
+  background: #ffffff !important;
+  border: 1px solid #E8E4D9 !important;
+  color: #3D4035 !important;
+  border-radius: 12px !important;
+  box-shadow: 0 8px 16px rgba(42, 45, 36, 0.12) !important;
+}
+
+.leaflet-popup-tip {
+  background: #ffffff !important;
+  border-left: 1px solid #E8E4D9;
+  border-bottom: 1px solid #E8E4D9;
+}
+
+/* Laser sweep animation for AI Scanner */
+@keyframes laser-sweep {
+  0% { top: 0%; }
+  50% { top: 100%; }
+  100% { top: 0%; }
+}
+
+.scanner-laser {
+  animation: laser-sweep 3s linear infinite;
+}
+
+/* Scrollbar Customization */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #FDFCF8;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #E8E4D9;
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #cbd5e1;
+}
